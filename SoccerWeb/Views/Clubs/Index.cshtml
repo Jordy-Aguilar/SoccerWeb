@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SoccerWeb.Models.Club>
+
+<h1>Clubes</h1>
+<a href="/Clubs/Create" class="btn btn-primary mb-3">Agregar nuevo club</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th> 
+            <th>Nombre</th>
+            <th>Liga</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td> 
+                <td>@item.Nombre</td>
+                <td>@item.Liga</td>
+                <td><a href="/Clubs/Detalles/@item.Id">Detalles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

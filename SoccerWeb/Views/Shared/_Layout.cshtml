@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SoccerWeb</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Cambia la fuente de todo el cuerpo */
+            background-color: #FFFFFF; /* Fondo negro para el cuerpo */
+            color: white; /* Color del texto */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el header */
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: bold; /* Letras en negrita */
+            color: white; /* Color de las letras */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #ff69b4; /* Color al pasar el mouse */
+            }
+
+        .container {
+            padding: 20px; /* Espaciado alrededor del contenido */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+                <a class="navbar-brand" href="/" style="font-weight: bold; font-size: 24px;">Soccer Stars</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Jugadors" asp-action="Index">Jugadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Clubs" asp-action="Index">Clubes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="More">More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

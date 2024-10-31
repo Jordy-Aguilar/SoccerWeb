@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SoccerWeb.Models.Jugador>
+
+<h1>Jugadores</h1>
+
+<a href="/Jugadors/Create" class="btn btn-primary mb-3">Agregar nuevo jugador</a> 
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th> 
+            <th>Nombre</th>
+            <th>Posición</th>
+            <th>Edad</th>
+            <th>Club</th>
+            <th>Nacionalidad</th> 
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.Posicion</td>
+                <td>@item.Edad</td>
+                <td>@item.Club.Nombre</td>
+                <td>@item.Nacionalidad</td> 
+                <td><a href="/Jugadores/Detalles/@item.Id">Detalles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
